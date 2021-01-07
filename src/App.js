@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment, useState } from 'react';
+import Board from './components/Board';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Score from './components/Score';
 
 function App() {
+
+  const [game, setGame] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Header/>
+      <section>
+        <Board game = {game}/>
+        <Score state = {[game, setGame]} />
+      </section>
+        <Footer/>
+    </Fragment>
   );
 }
 
