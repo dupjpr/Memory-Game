@@ -1,3 +1,18 @@
-.App{
-    color: red;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+@import 'header';
+@import 'card';
+@import 'board';
+@import 'score';
+
+.section{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 66vh;
 }

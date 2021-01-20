@@ -1,0 +1,30 @@
+.board-card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    .board-card-front {
+        .card-image-front {
+            width: 200px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+    }
+
+    .board-card-back{
+        position: absolute;
+        top: 0;
+        .card-image-back{
+            width: 200px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+            transition: all 1s ease;
+        }
+        .card-image-back-active{
+            opacity: 0;
+        }
+    }
+
+  
+}
