@@ -1,16 +1,18 @@
 import React, { useContext } from 'react';
 import { LogicContext } from '../contexts/LogicContext.js';
 import Card from './Card';
+import WinnerMsn from './WinnerMsn.jsx';
 
 const Board = () => {
 
     const dataContext = useContext(LogicContext);
 
-    const { gameCards } = dataContext;
+    const { gameCards, boardsize } = dataContext;
 
     return (
         <section className='section-board'>
-            {gameCards.map((card) => <Card card={card} key={card.key} />)}
+            {/* {gameCards.map((card) => <Card card={card} key={card.key} />)} */}
+            {  boardsize === 0 ? <WinnerMsn /> : gameCards.map((card) => <Card card={card} key={card.key} />)}
         </section>
     );
 }

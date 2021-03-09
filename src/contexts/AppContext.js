@@ -8,6 +8,8 @@ const AppContextProvider = ({ children }) => {
     // estados de la aplicación
 
     const [characters, setCharacters] = useState([]);
+    const [newGame, setNewGame] = useState(false);
+
 
     // llamado del API y configuración de la baraja
 
@@ -27,11 +29,11 @@ const AppContextProvider = ({ children }) => {
     const gameCollection = [];
 
     characters.map((character) => {
-        
+
         if (gameCollection.length !== 4) {
-            
+
             gameCollection.push(character);
-            
+
         }
     });
 
@@ -40,18 +42,24 @@ const AppContextProvider = ({ children }) => {
     function keyGenerator() {
 
         const gameKey = game.map((card) => {
-            
+
             return { ...card, key: uuidv4(), status: true }
 
         })
 
         return gameKey
     }
+
     const gameCards = keyGenerator();
 
-
     return (
-        <AppContext.Provider value={{ gameCards }}>
+        <AppContext.Provider value=
+            {{
+                gameCards,
+                newGame,
+                setNewGame
+            }}
+        >
             {children}
         </AppContext.Provider>
     );
