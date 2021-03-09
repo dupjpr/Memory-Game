@@ -1,11 +1,14 @@
 
 .section-board{
-    width: 100%;
-    height: auto;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-evenly;
+    margin: auto;
+    width: 80%;
+    height: 120vh;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    grid-template-rows: 45% 45%;
+    grid-column-gap: 2%;
+    grid-row-gap: 2%;
+    justify-content: center;
+    align-content: center;
+    background-color: blue;
 }

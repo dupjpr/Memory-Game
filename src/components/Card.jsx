@@ -1,30 +1,35 @@
-import React, {useState} from 'react';
-import '../sass/style.scss';
+import React, { useContext } from 'react';
+import { LogicContext } from "../contexts/LogicContext.js";
 
+const Card = ({ card }) => {
 
-const Card = ({ item }) => {
+    const dataContext = useContext(LogicContext);
 
-    const [clasItem, setClassItem] = useState('card-image-back')
+    const { pickCard, setPickCard } = dataContext;
 
-    const handleClick = () => {
-        // const element = e.target;
-        // element.classList.toggle();
-        setClassItem('card-image-back-active');
+    const handleClick = (e, key, id) => {
+        const parentNode = e.target.parentNode;
+        const imageNode = parentNode.firstChild;
+        setPickCard({ key: key, id: id, element:imageNode });
+
     }
 
 
-
     return (
+        <div
+            className='section-board__card'
+            onClick={(e) => handleClick(e, card.key, card.id)}
+        >
+            <img
+                className='section-board__card__image'
+                src={card.image}
+                alt="character"
 
-        <div className="board-card" onClick={(e) => handleClick(e)}>
-            <div className="board-card-front">
-                <img className='card-image-front' src={item.image} alt="card image front" />
-            </div>
-            <div className="board-card-back">
-                <img className={clasItem} src='https://i.pinimg.com/originals/cc/43/9d/cc439dab1d473c2f332419b73c72bd3e.jpg' alt="card image back" />
-            </div>
+            />
+            <div className={card.status ? 'section-board__card__cover' : 'section-board__card__cover_active'}></div>
         </div>
     );
 }
 
 export default Card;
+

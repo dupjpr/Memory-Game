@@ -5,14 +5,8 @@
     font-size: 16px;
 }
 
-@import 'header';
-@import 'card';
-@import 'board';
-@import 'score';
 
-.section{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 66vh;
-}
+@import 'board';
+@import 'card';
+
+
