@@ -11,7 +11,6 @@ const Board = () => {
 
     return (
         <section className='section-board'>
-            {/* {gameCards.map((card) => <Card card={card} key={card.key} />)} */}
             {  boardsize === 0 ? <WinnerMsn /> : gameCards.map((card) => <Card card={card} key={card.key} />)}
         </section>
     );

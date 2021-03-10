@@ -47,17 +47,17 @@ const LogicContextProvider = ({ children }) => {
             if (pickedCards[0].id === pickedCards[1].id) {
                 // winner
 
-                element.map((item) => {
-                    const classCardHidden = item.element;
+                element.forEach((item) => {
                     setTimeout(() => {
-                        classCardHidden.classList.add('section-board__card__image__active');
+                        const result = gameCards.filter((card) => card.key === item.key);
+                        result[0].cardStatus = false;
                     }, 600);
                 });
 
                 console.log(element);
                 setPickedCards([]);
                 setElement([]);
-                
+
                 setTimeout(() => {
                     setBoardSize(boardsize - 2);
                 }, 600);
@@ -68,14 +68,13 @@ const LogicContextProvider = ({ children }) => {
 
                 setTimeout(() => {
 
-                    pickedCards.map((item) => {
-
+                    pickedCards.forEach((item) => {
                         const result = gameCards.filter((card) => card.key === item.key);
                         result[0].status = true;
                         setPickedCards([]);
                         setElement([]);
                     })
-                    
+
                     setNumberTimes(numberTimes + 1);
 
                 }, 600);
@@ -84,9 +83,6 @@ const LogicContextProvider = ({ children }) => {
             }
         }
     }
-
-    console.log(boardsize);
-    console.log(numberTimes);
 
     return (
         <LogicContext.Provider value=

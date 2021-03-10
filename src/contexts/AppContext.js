@@ -10,7 +10,6 @@ const AppContextProvider = ({ children }) => {
     const [characters, setCharacters] = useState([]);
     const [newGame, setNewGame] = useState(false);
 
-
     // llamado del API y configuración de la baraja
 
     useEffect(() => {
@@ -28,7 +27,7 @@ const AppContextProvider = ({ children }) => {
 
     const gameCollection = [];
 
-    characters.map((character) => {
+    characters.forEach((character) => {
 
         if (gameCollection.length !== 4) {
 
@@ -43,7 +42,7 @@ const AppContextProvider = ({ children }) => {
 
         const gameKey = game.map((card) => {
 
-            return { ...card, key: uuidv4(), status: true }
+            return { ...card, key: uuidv4(), status: true, cardStatus:true }
 
         })
 

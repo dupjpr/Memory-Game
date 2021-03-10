@@ -5,20 +5,18 @@ const Card = ({ card }) => {
 
     const dataContext = useContext(LogicContext);
 
-    const { pickCard, setPickCard } = dataContext;
+    const { setPickCard } = dataContext;
 
     const handleClick = (e, key, id) => {
-        const parentNode = e.target.parentNode;
-        const imageNode = parentNode.firstChild;
-        setPickCard({ key: key, id: id, element:imageNode });
-
+        setPickCard({ key: key, id: id });
     }
-
 
     return (
         <div
-            className='section-board__card'
-            onClick={(e) => handleClick(e, card.key, card.id)}
+            className={card.cardStatus ? 'section-board__card' : 'section-board__card__hidden' } 
+            onClick={(e) => {
+                handleClick(e, card.key, card.id)
+            }}
         >
             <img
                 className='section-board__card__image'
