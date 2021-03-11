@@ -28,24 +28,17 @@ const AppContextProvider = ({ children }) => {
     const gameCollection = [];
 
     characters.forEach((character) => {
-
         if (gameCollection.length !== 4) {
-
             gameCollection.push(character);
-
         }
     });
 
     const game = [...gameCollection, ...gameCollection].sort(() => 0.5 - Math.random());
 
     function keyGenerator() {
-
         const gameKey = game.map((card) => {
-
             return { ...card, key: uuidv4(), status: true, cardStatus:true }
-
         })
-
         return gameKey
     }
 
