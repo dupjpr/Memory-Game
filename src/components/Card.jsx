@@ -13,7 +13,7 @@ const Card = ({ card }) => {
 
     return (
         <div
-            className={card.cardStatus ? 'section-board__card' : 'section-board__card__hidden' } 
+            className={card.cardStatus ? 'section-board__card' : 'section-board__card__hidden'}
             onClick={(e) => {
                 handleClick(e, card.key, card.id)
             }}
@@ -22,9 +22,13 @@ const Card = ({ card }) => {
                 className='section-board__card__image'
                 src={card.image}
                 alt="character"
-
             />
-            <div className={card.status ? 'section-board__card__cover' : 'section-board__card__cover_active'}></div>
+
+            <img
+                src="https://ae01.alicdn.com/kf/H16668b4ee20e4e63bf314d421881c53fr.jpg_q50.jpg"
+                alt="cover"
+                className={card.status ? 'section-board__card__cover__image' : 'section-board__card__cover__image_active'}
+            />
         </div>
     );
 }

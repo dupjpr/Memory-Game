@@ -1,0 +1,68 @@
+@import "./variables";
+
+.footer {
+    width: 100%;
+    min-width: 320px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $main-bg-color;
+    .footer__title {
+        color: $main-font-color;
+        font-size: 0.7rem;
+        margin-top: 3%;
+    }
+    .footer__btn {
+        color: $btn-color;
+        i {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        .footer__title {
+            font-size: 0.8rem;
+        }
+        .footer__btn {
+            i {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer {
+        .footer__title {
+            color: $main-font-color;
+            font-size: 0.7rem;
+            margin-top: 1%;
+        }
+        .footer__btn {
+            color: $btn-color;
+            i {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .footer {
+        .footer__title {
+            color: $main-font-color;
+            font-size: 0.8rem;
+            margin-top: 1%;
+        }
+        .footer__btn {
+            color: $btn-color;
+            i {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

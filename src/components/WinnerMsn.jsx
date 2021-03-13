@@ -19,11 +19,18 @@ const WinnerMsn = () => {
     };
 
     return (
-        <div>
-            <h1>You are the winner</h1>
-            <div>Score: {numberTimes}</div>
-            <button onClick={(e) => handleClickReset(e)}>play again</button>
-        </div>
+        <section className='section-msn'>
+            <div className="container">
+                <h2 className='section-msn__title'>Well Done !</h2>
+                <div className='section-msn__times'>Times: {numberTimes}</div>
+                <button
+                    onClick={(e) => handleClickReset(e)}
+                    className='section-msn__btn'
+                >
+                    play again
+                </button>
+            </div>
+        </section>
     );
 }
 

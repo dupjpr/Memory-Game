@@ -1,32 +1,105 @@
+@import "./variables";
+
 .section-board__card {
     position: relative;
-    visibility: visible;
     width: 100%;
-    height: 100%;
-    cursor:pointer;
+    height: 50%;
+    visibility: visible;
+    align-self: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0px 1.4px rgba(0, 0, 0, 0.031), 0 0px 4.1px rgba(0, 0, 0, 0.048), 0 0px 10px rgba(0, 0, 0, 0.063),
+        0 0px 29px rgba(0, 0, 0, 0.1);
     .section-board__card__image {
-        visibility: visible;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        visibility: visible;
+        border-radius: 50%;
         transition: all 1s;
         transition-timing-function: ease;
     }
-     .section-board__card__cover {
+    .section-board__card__cover__image {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: red;
+        border-radius: 50%;
+        object-fit: cover;
         opacity: 1;
         transition: all 1s;
     }
-    .section-board__card__cover_active {
+    .section-board__card__cover__image_active {
         opacity: 0;
     }
 }
 
-.section-board__card__hidden{
+.section-board__card__hidden {
     visibility: hidden;
-} 
+}
+
+@media (min-width: 334px) {
+    .section-board__card {
+        height: 52%;
+    }
+}
+
+@media (min-width: 346px) {
+    .section-board__card {
+        height: 53%;
+    }
+}
+@media (min-width: 354px) {
+    .section-board__card {
+        height: 54%;
+    }
+}
+@media (min-width: 370px) {
+    .section-board__card {
+        height: 57%;
+    }
+}
+@media (min-width: 388px) {
+    .section-board__card {
+        height: 59%;
+    }
+}
+@media (min-width: 392px) {
+    .section-board__card {
+        height: 61%;
+    }
+}
+@media (min-width: 480px) {
+    .section-board__card {
+        height: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    .section-board__card {
+        height: 100%;
+        .section-board__card__image {
+            border-radius: 10px;
+        }
+        .section-board__card__cover__image {
+            border-radius: 10px;
+           
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .section-board__card {
+     justify-self: center;
+        width: 70%;
+        height: 100%;
+        .section-board__card__image {
+            border-radius: 10px;
+        }
+        .section-board__card__cover__image {
+            border-radius: 10px;
+           
+        }
+    }
+}

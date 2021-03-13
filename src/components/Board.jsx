@@ -7,11 +7,14 @@ const Board = () => {
 
     const dataContext = useContext(LogicContext);
 
-    const { gameCards, boardsize } = dataContext;
+    const { gameCards, boardsize, numberTimes } = dataContext;
 
     return (
-        <section className='section-board'>
-            {  boardsize === 0 ? <WinnerMsn /> : gameCards.map((card) => <Card card={card} key={card.key} />)}
+        <section className='section'>
+            {/* <div className='section__times'>Times: {numberTimes}</div> */}
+            <div className='section-board'>
+                {boardsize === 0 ? <WinnerMsn /> : gameCards.map((card) => <Card card={card} key={card.key} />)}
+            </div>
         </section>
     );
 }
