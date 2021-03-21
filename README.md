@@ -12,7 +12,7 @@ In this project I call and consult a free API. The API is "Rick and Morty API" a
 
 ## Built With :atom:
 
-* React.
+* React. ⚛
 * JavaScript.
 * Html.
 * Css.
